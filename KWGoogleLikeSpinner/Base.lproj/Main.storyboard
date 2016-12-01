@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KWGoogleLikeSpinner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWl-6Z-Qrp" customClass="KWGoogleLikeSpinner" customModule="KWGoogleLikeSpinner" customModuleProvider="target">
+                                <rect key="frame" x="18.849364905389038" y="22.849364905389034" width="68.301270189221924" height="68.301270189221924"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DWl-6Z-Qrp" secondAttribute="height" multiplier="1:1" id="Ugr-S6-i49"/>
+                                    <constraint firstAttribute="width" constant="50" id="y5h-85-h3J"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeDuration">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rotationDuration">
+                                        <real key="value" value="2.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeEnd">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                        <real key="value" value="120"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTO-cE-qvC" customClass="KWGoogleLikeSpinner" customModule="KWGoogleLikeSpinner" customModuleProvider="target">
+                                <rect key="frame" x="154.95718089721055" y="24.957180897210563" width="64.085638205578874" height="64.085638205578874"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Sib-7f-BpD"/>
+                                    <constraint firstAttribute="width" secondItem="oTO-cE-qvC" secondAttribute="height" multiplier="1:1" id="WMc-a3-4FM"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeDuration">
+                                        <real key="value" value="1.8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rotationDuration">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeEnd">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                        <real key="value" value="250"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tei-5a-kfd" customClass="KWGoogleLikeSpinner" customModule="KWGoogleLikeSpinner" customModuleProvider="target">
+                                <rect key="frame" x="287.18178798399902" y="22.181787983999058" width="69.636424032001912" height="69.636424032001884"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="8uq-UE-cfK"/>
+                                    <constraint firstAttribute="width" secondItem="Tei-5a-kfd" secondAttribute="height" multiplier="1:1" id="KK1-0E-kt4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeDuration">
+                                        <real key="value" value="2.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rotationDuration">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeEnd">
+                                        <real key="value" value="0.90000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9D-ac-ZO4" customClass="KWGoogleLikeSpinner" customModule="KWGoogleLikeSpinner" customModuleProvider="target">
+                                <rect key="frame" x="24.038601733021544" y="104.03860173302154" width="57.92279653395692" height="57.922796533956912"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Y1c-kj-uUC"/>
+                                    <constraint firstAttribute="width" secondItem="X9D-ac-ZO4" secondAttribute="height" multiplier="1:1" id="rec-MP-SRL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rotationDuration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeEnd">
+                                        <real key="value" value="0.999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guX-QI-May" customClass="KWGoogleLikeSpinner" customModule="KWGoogleLikeSpinner" customModuleProvider="target">
+                                <rect key="frame" x="153.84936490538905" y="98.349364905389024" width="68.301270189221896" height="68.301270189221924"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="guX-QI-May" secondAttribute="height" multiplier="1:1" id="6TN-js-1bN"/>
+                                    <constraint firstAttribute="width" constant="50" id="cf2-no-sS6"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeDuration">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rotationDuration">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeEnd">
+                                        <real key="value" value="0.75"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                        <real key="value" value="570"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9LA-ZQ-K55" customClass="KWGoogleLikeSpinner" customModule="KWGoogleLikeSpinner" customModuleProvider="target">
+                                <rect key="frame" x="298.68178798399902" y="97.681787983999058" width="69.636424032001912" height="69.636424032001869"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9LA-ZQ-K55" secondAttribute="height" multiplier="1:1" id="Boo-nB-d9l"/>
+                                    <constraint firstAttribute="width" constant="50" id="dR9-AI-A83"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeDuration">
+                                        <real key="value" value="0.90000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rotationDuration">
+                                        <real key="value" value="1.2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeEnd">
+                                        <real key="value" value="0.92342299999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkS-LA-cbV" customClass="KWGoogleLikeSpinner" customModule="KWGoogleLikeSpinner" customModuleProvider="target">
+                                <rect key="frame" x="105.03847577293368" y="251.03847577293371" width="163.92304845413264" height="163.92304845413261"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Gyi-ea-fGO"/>
+                                    <constraint firstAttribute="width" secondItem="AkS-LA-cbV" secondAttribute="height" multiplier="1:1" id="ZQC-6I-aUY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeDuration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rotationDuration">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeEnd">
+                                        <real key="value" value="0.90000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                        <real key="value" value="120"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DWl-6Z-Qrp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="0ZA-Fy-Vhh"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="DWl-6Z-Qrp" secondAttribute="leading" constant="-12" id="33k-xG-Sg4"/>
+                            <constraint firstItem="AkS-LA-cbV" firstAttribute="width" secondItem="AkS-LA-cbV" secondAttribute="height" multiplier="1:1" id="5EY-hc-RHi"/>
+                            <constraint firstItem="9LA-ZQ-K55" firstAttribute="width" secondItem="9LA-ZQ-K55" secondAttribute="height" multiplier="1:1" id="7Yd-kB-MsJ"/>
+                            <constraint firstItem="guX-QI-May" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8JL-Ar-vYl"/>
+                            <constraint firstItem="guX-QI-May" firstAttribute="width" secondItem="guX-QI-May" secondAttribute="height" multiplier="1:1" id="8iE-VG-eko"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tei-5a-kfd" secondAttribute="trailing" constant="12" id="9BT-MC-jrq"/>
+                            <constraint firstItem="guX-QI-May" firstAttribute="centerY" secondItem="X9D-ac-ZO4" secondAttribute="centerY" id="9qh-J0-nkU"/>
+                            <constraint firstItem="AkS-LA-cbV" firstAttribute="width" secondItem="AkS-LA-cbV" secondAttribute="height" multiplier="1:1" id="BHQ-0Q-t0B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9LA-ZQ-K55" secondAttribute="trailing" constant="0.36357596799808789" id="Bdx-5p-f0q"/>
+                            <constraint firstItem="9LA-ZQ-K55" firstAttribute="centerY" secondItem="guX-QI-May" secondAttribute="centerY" id="DLX-6x-gac"/>
+                            <constraint firstItem="Tei-5a-kfd" firstAttribute="centerY" secondItem="oTO-cE-qvC" secondAttribute="centerY" id="DU7-kf-1TZ"/>
+                            <constraint firstItem="AkS-LA-cbV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Hfv-XG-IWZ"/>
+                            <constraint firstItem="AkS-LA-cbV" firstAttribute="width" secondItem="AkS-LA-cbV" secondAttribute="height" multiplier="1:1" id="HxK-pH-KaN"/>
+                            <constraint firstItem="9LA-ZQ-K55" firstAttribute="width" secondItem="9LA-ZQ-K55" secondAttribute="height" multiplier="1:1" id="KhZ-sZ-Sxr"/>
+                            <constraint firstItem="X9D-ac-ZO4" firstAttribute="width" secondItem="X9D-ac-ZO4" secondAttribute="height" multiplier="1:1" id="SXg-aT-Idn"/>
+                            <constraint firstItem="X9D-ac-ZO4" firstAttribute="top" secondItem="DWl-6Z-Qrp" secondAttribute="bottom" constant="25.849364905389038" id="ScP-zE-KTF"/>
+                            <constraint firstItem="Tei-5a-kfd" firstAttribute="width" secondItem="Tei-5a-kfd" secondAttribute="height" multiplier="1:1" id="TWS-vy-KRe"/>
+                            <constraint firstItem="AkS-LA-cbV" firstAttribute="width" secondItem="AkS-LA-cbV" secondAttribute="height" multiplier="1:1" id="WAd-Tx-XVD"/>
+                            <constraint firstItem="oTO-cE-qvC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a4J-3N-k1f"/>
+                            <constraint firstItem="AkS-LA-cbV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aRo-bj-8xI"/>
+                            <constraint firstItem="guX-QI-May" firstAttribute="width" secondItem="guX-QI-May" secondAttribute="height" multiplier="1:1" id="fsl-Ny-NX6"/>
+                            <constraint firstItem="X9D-ac-ZO4" firstAttribute="leading" secondItem="DWl-6Z-Qrp" secondAttribute="leading" id="hfh-BG-OPt"/>
+                            <constraint firstItem="9LA-ZQ-K55" firstAttribute="width" secondItem="9LA-ZQ-K55" secondAttribute="height" multiplier="1:1" id="k7D-c5-kwE"/>
+                            <constraint firstItem="Tei-5a-kfd" firstAttribute="width" secondItem="Tei-5a-kfd" secondAttribute="height" multiplier="1:1" id="sXY-vy-4wR"/>
+                            <constraint firstItem="oTO-cE-qvC" firstAttribute="width" secondItem="oTO-cE-qvC" secondAttribute="height" multiplier="1:1" id="u9h-Zn-Y0p"/>
+                            <constraint firstItem="oTO-cE-qvC" firstAttribute="centerY" secondItem="DWl-6Z-Qrp" secondAttribute="centerY" id="yei-Tc-wA6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outletCollection property="spinners" destination="DWl-6Z-Qrp" collectionClass="NSMutableArray" id="3qc-gZ-QfI"/>
+                        <outletCollection property="spinners" destination="oTO-cE-qvC" collectionClass="NSMutableArray" id="WIA-y7-2et"/>
+                        <outletCollection property="spinners" destination="Tei-5a-kfd" collectionClass="NSMutableArray" id="Ajs-aC-UKS"/>
+                        <outletCollection property="spinners" destination="X9D-ac-ZO4" collectionClass="NSMutableArray" id="KGL-Bg-3mx"/>
+                        <outletCollection property="spinners" destination="guX-QI-May" collectionClass="NSMutableArray" id="AvW-Wi-Sxg"/>
+                        <outletCollection property="spinners" destination="9LA-ZQ-K55" collectionClass="NSMutableArray" id="KZ1-Vy-ogm"/>
+                        <outletCollection property="spinners" destination="AkS-LA-cbV" collectionClass="NSMutableArray" id="JrE-J1-Xoy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
