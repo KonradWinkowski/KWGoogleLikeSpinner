@@ -9,27 +9,66 @@
 import UIKit
 
 @IBDesignable
-class KWGoogleLikeSpinner: UIView, CAAnimationDelegate {
+final class KWGoogleLikeSpinner: UIView {
     
-    let STROKE_ANIMATION_KEY = "stoke_animation"
-    let ROTATION_ANIMATION_KEY = "rotation_animation"
+    private let STROKE_ANIMATION_KEY = "stoke_animation"
+    private let ROTATION_ANIMATION_KEY = "rotation_animation"
     
     @IBInspectable var strokeWidth : CGFloat = 2.0
     @IBInspectable var strokeDuration : CGFloat = 0.8
     @IBInspectable var strokeEnd : CGFloat = 0.8
     
-    @IBInspectable var rotationDuration : CGFloat = 1.0
-    
     @IBInspectable var startAngle : CGFloat = 120.0
     
+    private var strokeEndAnimation: CAAnimation {
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.duration = CFTimeInterval(strokeDuration)
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        
+        let group = CAAnimationGroup()
+        group.duration = CFTimeInterval(strokeDuration * 1.25)
+        group.repeatCount = MAXFLOAT
+        group.animations = [animation]
+        
+        return group
+    }
+    
+    private var strokeStartAnimation: CAAnimation {
+        let animation = CABasicAnimation(keyPath: "strokeStart")
+        animation.beginTime = 0.5
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.duration = CFTimeInterval(strokeDuration)
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        
+        let group = CAAnimationGroup()
+        group.duration = CFTimeInterval(strokeDuration * 1.25)
+        group.repeatCount = MAXFLOAT
+        group.animations = [animation]
+        
+        return group
+    }
+    
+    private var rotationAnimation: CAAnimation {
+        let animation = CABasicAnimation(keyPath: "transform.rotation.z")
+        animation.fromValue = 0
+        animation.toValue = Double.pi * 2
+        animation.duration = CFTimeInterval(strokeDuration * 2)
+        animation.repeatCount = MAXFLOAT
+        return animation
+    }
+    
     // change these values for your own custom colors //
-    var colors = [UIColor(hexString: "EC644B"), UIColor(hexString: "BE90D4"), UIColor(hexString: "446CB3"), UIColor(hexString: "90C695"), UIColor(hexString: "F5D76E"), UIColor(hexString: "EB9532")]{
+    var colors = [UIColor(hexString: "1abc9c"), UIColor(hexString: "3498db"), UIColor(hexString: "9b59b6"), UIColor(hexString: "f1c40f"), UIColor(hexString: "e67e22"), UIColor(hexString: "e74c3c")]{
         didSet {
             internalInit()
         }
     }
     
-    var outsideLine : CAShapeLayer = CAShapeLayer()
+    private var outsideLine : CAShapeLayer = CAShapeLayer()
+    private var timer: Timer?
     
     override var isHidden: Bool{
         get {
@@ -61,7 +100,7 @@ class KWGoogleLikeSpinner: UIView, CAAnimationDelegate {
         self.layoutCircles()
     }
     
-    func layoutCircles() {
+    private func layoutCircles() {
         
         let inset : CGFloat = 0.0
         
@@ -69,33 +108,38 @@ class KWGoogleLikeSpinner: UIView, CAAnimationDelegate {
         
         outsideLine.position = CGPoint(x: self.layer.frame.size.width / 2, y: self.layer.frame.size.height / 2)
         
-        let outsidePath = UIBezierPath.init(ovalIn: CGRect(x: self.bounds.origin.x, y: self.bounds.origin.y, width: self.bounds.size.width - inset, height: self.bounds.size.height - inset))
+        let outsidePath = UIBezierPath.init(ovalIn: CGRect(x: outsideLine.bounds.origin.x, y: outsideLine.bounds.origin.y, width: outsideLine.bounds.size.width - inset, height: outsideLine.bounds.size.height - inset))
         
         outsideLine.path = outsidePath.cgPath
-        
-        transform = CGAffineTransform(rotationAngle: CGFloat(Double(startAngle) / 180.0 * M_PI))
+
     }
     
-    func startAnimating(){
+    private func startAnimating(){
         self.stopAnimating()
         
         addStrokeAnimation()
         addRotationAnimation()
+        timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(strokeDuration * 1.25), repeats: true, block: { [weak self] (timer) in
+            self?.changeLineColor()
+        })
     }
     
-    func stopAnimating(){
+    private func stopAnimating(){
+        timer?.invalidate()
+        timer = nil
         outsideLine.removeAllAnimations()
     }
     
-    func addStrokeAnimation() {
-        outsideLine.add(strokeAnimation(), forKey: STROKE_ANIMATION_KEY)
+    private func addStrokeAnimation() {
+        outsideLine.add(strokeEndAnimation, forKey: "stroke_end_animation")
+        outsideLine.add(strokeStartAnimation, forKey: "stroke_start_animation")
     }
     
-    func addRotationAnimation() {
-        outsideLine.add(rotationAnimation(), forKey: ROTATION_ANIMATION_KEY)
+    private func addRotationAnimation() {
+        outsideLine.add(rotationAnimation, forKey: ROTATION_ANIMATION_KEY)
     }
     
-    func changeLineColor() {
+    private func changeLineColor() {
         var colorIndex = colors.index(of: UIColor.init(cgColor: outsideLine.strokeColor!))
         
         if colorIndex == nil || colorIndex == colors.count - 1 {
@@ -107,31 +151,7 @@ class KWGoogleLikeSpinner: UIView, CAAnimationDelegate {
         outsideLine.strokeColor = colors[colorIndex!].cgColor
     }
     
-    fileprivate func rotationAnimation() -> CABasicAnimation{
-        let animation = CABasicAnimation.init(keyPath: "transform.rotation")
-        animation.toValue = M_PI * 2
-        animation.duration = CFTimeInterval(rotationDuration)
-        animation.repeatCount = FLT_MAX
-        animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionDefault)
-        
-        return animation
-    }
-    
-    fileprivate func strokeAnimation() -> CABasicAnimation{
-        let animation = CABasicAnimation.init(keyPath: "strokeEnd")
-        animation.fromValue = 0.0
-        animation.toValue = strokeEnd
-        animation.duration = CFTimeInterval(strokeDuration)
-        animation.repeatCount = 1
-        animation.autoreverses = true
-        animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
-        animation.delegate = self
-        animation.setValue(STROKE_ANIMATION_KEY, forKey: "animation_key")
-        
-        return animation
-    }
-    
-    fileprivate func internalInit(){
+    private func internalInit() {
         self.backgroundColor = UIColor.clear
         
         let scale = UIScreen.main.scale
@@ -143,32 +163,23 @@ class KWGoogleLikeSpinner: UIView, CAAnimationDelegate {
         self.layoutCircles()
         
         self.outsideLine.fillColor = UIColor.clear.cgColor
+        self.layer.backgroundColor = UIColor.clear.cgColor
         
         self.outsideLine.strokeColor = colors.first?.cgColor
+        self.outsideLine.strokeStart = 0.0
+        self.outsideLine.strokeEnd = 1.0
         
-        self.outsideLine.lineWidth = strokeWidth;
+        self.outsideLine.lineWidth = strokeWidth
         
-        self.outsideLine.strokeEnd = 0.0;
-        self.outsideLine.strokeStart = 0.0;
+        self.outsideLine.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
-        self.outsideLine.lineCap = kCALineCapRound;
+        self.outsideLine.lineCap = kCALineCapRound
         
         self.layer.addSublayer(self.outsideLine)
-        
+                
         self.outsideLine.isHidden = true;
-    }
-    
-    //MARK - Animation Delegate 
-    
-    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if flag && anim.value(forKey: "animation_key") as! String == STROKE_ANIMATION_KEY {
-            changeLineColor()
-            
-            let deadlineTime = DispatchTime.now() + 0.1
-            DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: { [weak self] in
-                self?.addStrokeAnimation()
-            })
-        }
+        
+        self.outsideLine.transform = CATransform3DMakeRotation(CGFloat(startAngle), 0.0, 0.0, 1.0)
     }
 
 }
@@ -180,7 +191,7 @@ extension UIColor {
         var int = UInt32()
         Scanner(string: hex).scanHexInt32(&int)
         let a, r, g, b: UInt32
-        switch hex.characters.count {
+        switch hex.count {
         case 3: // RGB (12-bit)
             (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
         case 6: // RGB (24-bit)
